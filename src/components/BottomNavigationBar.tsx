@@ -10,7 +10,7 @@ import { NavLink } from 'react-router';
 
 export const BottomNavigationBar = () => {
     return (
-        <div className="fixed bottom-0 w-full p-3 text-indigo-700 ">
+        <div className="fixed bottom-0 w-full p-3 text-indigo-700 z-10">
             <ul className="flex justify-evenly items-center rounded-3xl drop-shadow-2xl/50 bg-white">
                 <li className="p-3 text-2xl">
                     <NavLink to="/">
