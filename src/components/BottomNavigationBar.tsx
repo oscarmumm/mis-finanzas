@@ -28,7 +28,7 @@ export const BottomNavigationBar = () => {
                     </NavLink>
                 </li>
                 <li className="p-3 text-2xl">
-                    <NavLink to="/settings">
+                    <NavLink to="/categories">
                         <FaFolderOpen />
                     </NavLink>
                 </li>
