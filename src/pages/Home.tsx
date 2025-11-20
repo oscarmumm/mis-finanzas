@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useTransactions } from '../hooks/useTransactions';
-import { useCategories } from '../hooks/useCategories';
 import { formatMoney } from '../utils';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 import { GiMoneyStack } from "react-icons/gi";
 import { format, parseISO } from 'date-fns';
 import { Pie, PieChart, ResponsiveContainer } from 'recharts';
+import { useAppData } from '../hooks/useAppData';
 
 export const Home = () => {
     const {
@@ -14,12 +13,12 @@ export const Home = () => {
         getLatestTransactions,
         getMonthlyExpenseTransactions,
         getMonthlyIncomeTransactions,
-    } = useTransactions();
+        categories
+    } = useAppData();
     useEffect(() => {
         calculateExpensesCategoriesParticipation();
         calculateIncomesCategoriesParticipation();
     }, []);
-    const { categories } = useCategories();
     const [sensitiveInfoVisible, setSensitiveInfoVisible] =
         useState<boolean>(true);
     const [
@@ -131,7 +130,7 @@ export const Home = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {getLatestTransactions().map((tx) => (
+                        {getLatestTransactions(5).map((tx) => (
                             <tr
                                 key={tx.transactionId}
                                 className="border-t border-indigo-200">

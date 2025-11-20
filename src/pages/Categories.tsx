@@ -1,10 +1,10 @@
 import { useMemo, useState } from 'react';
-import { useCategories } from '../hooks/useCategories';
 import type { Category } from '../types';
 import { NewCategoryModal } from '../components/modals/NewCategoryModal';
+import { useAppData } from '../hooks/useAppData';
 
 export const Categories = () => {
-    const { categories } = useCategories();
+    const { categories } = useAppData();
     const [newCategoryModalActive, setNewCategoryModalActive] =
         useState<boolean>(false);
 

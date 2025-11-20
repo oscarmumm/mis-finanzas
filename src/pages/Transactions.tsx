@@ -1,9 +1,9 @@
 import { parseISO, format } from 'date-fns';
-import { useTransactions } from '../hooks/useTransactions';
 import { formatMoney } from '../utils';
+import { useAppData } from '../hooks/useAppData';
 
 export const Transactions = () => {
-    const { transactions } = useTransactions();
+    const { transactions } = useAppData();
 
     return (
         <div className="p-3 text-indigo-900">
