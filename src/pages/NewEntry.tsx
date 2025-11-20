@@ -1,9 +1,7 @@
-import { useState } from 'react';
-import type { Category } from '../types';
 import { useAppData } from '../hooks/useAppData';
 
 export const NewEntry = () => {
-    const { categories, addTransaction } = useAppData();
+    const { categories } = useAppData();
 
     return (
         <div className="p-3 text-indigo-900">
